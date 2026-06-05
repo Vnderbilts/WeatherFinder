@@ -30,7 +30,7 @@ Aplikasi cuaca modern berbasis React Native (Expo) yang menggunakan **Open-Meteo
 
 | Kosong | Loading | Sukses | Error |
 |--------|---------|--------|-------|
-| ![Kosong](./screenshoots/kosong.jpg) | ![Loaing](./screenshoots/loading.jpg) | ![Sukses](./screenshoots/berhasil.jpg) | ![Erorr](./screenshoots/erorr.jpg) |
+| ![Kosong](./screenshoots/kosong.jpg) | ![Loaing](./screenshoots/loading.jpg) | ![Sukses](./screenshoots/success.jpg) | ![Erorr](./screenshoots/erorr.jpg) |
 
 ## 🚀 Cara Menjalankan
 
