@@ -52,4 +52,4 @@ npx expo start
 
 ## 🔗 Links
 
-- **Expo Snack**: *(tempel link snack.expo.dev di sini)*
+- **Expo Snack**: ![tempel link snack.expo.dev di sini](https://snack.expo.dev/@vnderbilts/weatherfinderapp)
