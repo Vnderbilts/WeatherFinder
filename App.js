@@ -20,12 +20,15 @@ import SearchBar from './components/SearchBar';
 import WeatherCard from './components/WeatherCard';
 import SearchHistory from './components/SearchHistory';
 import EmptyState from './components/EmptyState';
+import ForecastCard from './components/ForecastCard';
+import FavoritesList from './components/FavoritesList';
 
 const MAX_HISTORY = 5;
 
 export default function App() {
   const [query, setQuery] = useState('');
   const [history, setHistory] = useState([]);
+  const [favorites, setFavorites] = useState([]);
 
   const { weather, loading, error, status } = useWeather(query);
 
@@ -69,6 +72,13 @@ export default function App() {
             {/* Search */}
             <SearchBar value={query} onChangeText={setQuery} />
 
+            {/* Favorites (Level 3) */}
+            <FavoritesList
+              currentCity={weather?.city}
+              onSelect={(city) => setQuery(city)}
+              onFavoritesChange={setFavorites}
+            />
+
             {/* Riwayat pencarian */}
             {history.length > 0 && status !== 'loading' && (
               <SearchHistory
@@ -95,7 +105,14 @@ export default function App() {
             )}
 
             {status === 'success' && weather && (
-              <WeatherCard weather={weather} accentColor={theme.accent} />
+              <>
+                <WeatherCard weather={weather} accentColor={theme.accent} />
+                {/* Forecast 7 Hari (Level 3) */}
+                <ForecastCard
+                  forecast7Days={weather.forecast7Days}
+                  accentColor={theme.accent}
+                />
+              </>
             )}
           </ScrollView>
         </KeyboardAvoidingView>

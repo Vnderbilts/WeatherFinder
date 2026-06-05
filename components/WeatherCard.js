@@ -5,6 +5,12 @@ import { GLASS, GLASS_DARK, TEXT, SPACING } from '../constants/theme';
 import { getWeatherInfo } from '../utils/weatherCodes';
 import { degreesToCompass, windArrowRotation } from '../utils/windDirection';
 
+// Format time HH:MM dari ISO string
+const formatTime = (isoString) => {
+  if (!isoString) return '--:--';
+  return isoString.split('T')[1].substring(0, 5);
+};
+
 export default function WeatherCard({ weather, accentColor }) {
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const slideAnim = useRef(new Animated.Value(20)).current;
@@ -82,6 +88,33 @@ export default function WeatherCard({ weather, accentColor }) {
             accent={accentColor}
           />
         </View>
+      )}
+
+      {/* ── Level 3: Precipitation + Sun times ── */}
+      {weather.precipitation !== undefined && (
+        <>
+          <View style={[styles.divider, { backgroundColor: 'rgba(255,255,255,0.10)', marginVertical: 16 }]} />
+          <View style={styles.level3Row}>
+            <StatChip
+              icon="💧"
+              label="Hujan"
+              value={`${weather.precipitation}mm`}
+              accent={accentColor}
+            />
+            <StatChip
+              icon="🌅"
+              label="Sunrise"
+              value={weather.sunrise ? formatTime(weather.sunrise) : '--:--'}
+              accent={accentColor}
+            />
+            <StatChip
+              icon="🌇"
+              label="Sunset"
+              value={weather.sunset ? formatTime(weather.sunset) : '--:--'}
+              accent={accentColor}
+            />
+          </View>
+        </>
       )}
     </Animated.View>
   );
@@ -170,6 +203,11 @@ const styles = StyleSheet.create({
 
   // Min/Maks + Angin
   minMaxRow: {
+    flexDirection: 'row',
+    gap: 8,
+    justifyContent: 'space-between',
+  },
+  level3Row: {
     flexDirection: 'row',
     gap: 8,
     justifyContent: 'space-between',
