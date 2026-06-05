@@ -50,24 +50,6 @@ npx expo start
 | expo-linear-gradient | Background gradien dinamis |
 | React Hooks (useEffect, useState, useRef) | State & side effects |
 
-## 📁 Struktur Proyek
-
-weatherfinder/
-├── App.js
-├── hooks/
-│   └── useWeather.js       # Semua logika fetch + debounce
-├── components/
-│   ├── SearchBar.js
-│   ├── WeatherCard.js
-│   ├── SearchHistory.js
-│   └── EmptyState.js
-├── utils/
-│   ├── weatherCodes.js
-│   ├── windDirection.js
-│   └── dynamicTheme.js
-└── constants/
-└── theme.js
-
 ## 🔗 Links
 
 - **Expo Snack**: *(tempel link snack.expo.dev di sini)*
