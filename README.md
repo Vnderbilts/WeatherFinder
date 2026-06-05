@@ -53,4 +53,3 @@ npx expo start
 ## 🔗 Links
 
 - **Expo Snack**: *(tempel link snack.expo.dev di sini)*
-- **GitHub**: *(link repo)*
