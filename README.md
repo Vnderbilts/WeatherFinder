@@ -80,8 +80,7 @@ GET https://api.open-meteo.com/v1/forecast
 
 ## 🔗 Links
 
-- **Expo Snack**: https://snack.expo.dev/@Vnderbilts/weatherfinder
-- **GitHub Repository**: https://github.com/Vnderbilts/WeatherFinder
+- **Expo Snack**: https://snack.expo.dev/@vnderbilts/weatherfinderapp
 
 ## 📁 Struktur Project
 
@@ -114,74 +113,6 @@ WeatherFinder/
 └── assets/
     └── icons, images           # Icons & splash images
 ```
-
-## 🎯 Cara Menggunakan (User Guide)
-
-### 1. Search Cuaca
-- Ketik nama kota di search bar (mis: "Jakarta", "Bandung", "New York")
-- Tunggu 500ms (debounce) → otomatis fetch data
-
-### 2. Lihat Data Cuaca
-- **Sekarang**: Suhu, kondisi, arah angin
-- **Sunrise/Sunset**: Waktu terbit & terbenam matahari
-- **7 Hari**: Swipe horizontal untuk lihat prakiraan
-
-### 3. Simpan Favorit
-- Tap tombol ☆ (bintang kosong) → **Tambah ke favorit**
-- Tap tombol ⭐ (bintang penuh) → **Hapus dari favorit**
-- Favorit otomatis tersimpan di phone & load ulang saat buka app
-- Max: 10 favorit
-
-## 🚀 Cara Menjalankan
-
-### Lokal (Development)
-```bash
-# 1. Clone repo
-git clone https://github.com/Vnderbilts/WeatherFinder.git
-cd WeatherFinder
-
-# 2. Install dependencies
-npm install
-
-# 3. Jalankan Expo
-npx expo start
-
-# 4. Scan QR code dengan Expo Go (Android/iOS)
-```
-
-### Via Expo Snack (Browser)
-1. Buka: https://snack.expo.dev/@Vnderbilts/weatherfinder
-2. Edit code online (web preview + mobile preview)
-3. Scan QR dengan Expo Go untuk test di phone
-
-## 💡 Development Tips
-
-### Debug
-```javascript
-// Di hooks/useWeather.js - Console logs untuk tracking
-console.log('Geocoding result:', geoData);
-console.log('Weather data:', weatherData);
-```
-
-### Menambah Parameter API
-Open-Meteo punya banyak parameter. Edit `useWeather.js`:
-```javascript
-// Tambahkan ke daily parameter
-&daily=...,uv_index_max,relative_humidity_2m_max,...
-```
-
-### Styling & Theme
-- Design tokens ada di `constants/theme.js`
-- 6 tema cuaca di `utils/dynamicTheme.js`
-- Modify THEMES object untuk custom gradients
-
-## 📝 Version History
-
-| Version | Fitur | Date |
-|---------|-------|------|
-| 1.0.0 | Level 3: Favorites, 7-day forecast, sunrise/sunset | June 5, 2026 |
-| 0.5.0 | Level 2: History, dynamic theme, wind direction | June 4, 2026 |
-| 0.1.0 | Level 1: Core search & display | June 3, 2026 |
 
 ## 📄 License
 
